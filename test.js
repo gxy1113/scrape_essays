@@ -34,6 +34,8 @@ const scrape = async (t) => {
         let font_text = "";
         try{
             font_text = await font.innerText;
+            font_text = font_text.replace(/\n/g, "");
+            font_text = font_text.replace(/\r/g, "");
         }catch(err){
             console.log("error: ", err);
             continue;
